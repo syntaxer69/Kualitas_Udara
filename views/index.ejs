@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kualiatas Udara</title>
+    <!-- fungsi untuk cek server dan mengambil data koneksi keserver socket -->
+    <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+
+    <style>
+        .container {
+            min-height: 500px;
+        }
+        .box {
+            display: flex;
+            min-width: 800px;
+            justify-content: center;
+        }
+        .box1 {
+            margin: 10px 15px;
+            height: 100px; 
+            width: 200px; 
+        }
+        p {
+            font-size: 28px; 
+            font-weight: 700; 
+            text-align: center;
+        }
+
+        .box1 h2 {
+            font-size: 16px; 
+            font-weight: 700; 
+            text-align: center;
+        }
+
+        .box1 p {
+            font-size: 16px; 
+            font-weight: 400; 
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;" id="live-report">-</h1>
+        <p id="live-ispu">-</p>
+        <p id="live-recomendation">Rekomendasi Tindakan: -</p>
+        <div class="box">
+            <div class="box1">
+                <h2>RATA-RATA HARIAN</h2>
+                <p id="status-harian">-</p>
+                <p id="ispu-harian">-</p>
+            </div>
+            <div class="box1">
+                <h2>RATA-RATA MINGGUAN</h2>
+                <p id="status-mingguan">-</p>
+                <p id="ispu-mingguan">-</p>
+            </div>
+            <div class="box1">
+                <h2>RATA-RATA BULANAN</h2>
+                <p id="status-bulanan">-</p>
+                <p id="ispu-bulanan">-</p>
+            </div>
+            <div class="box1">
+                <h2>RATA-RATA TAHUNAN</h2>
+                <p id="status-tahunan">-</p>
+                <p id="ispu-tahunan">-</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/jquery-3.5.1.min.js"></script>
+    <script src="/assets/script.js"></script>
+</body>
+</html>
