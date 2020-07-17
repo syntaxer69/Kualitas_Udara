@@ -92,7 +92,7 @@ const rumumsIspu = {
 }
 
 function baik(number) {
-    if(50 <= number && number <= 150){
+    if(50 <= number && number < 150){
         let mu = (150 - number) / (150 - 50)
         pm10['baik']['mu'] = mu
         pm10['baik']['isTrue'] = true
@@ -108,7 +108,7 @@ function sedang(number) {
         let mu = (number - 50) / (150 - 50)
         pm10['sedang']['mu'] = mu
         pm10['sedang']['isTrue'] = true
-    } else if(150 <= number && number <= 300){
+    } else if(150 <= number && number < 300){
         let mu = (300 - number) / (300 - 50)
         pm10['sedang']['mu'] = mu
         pm10['sedang']['isTrue'] = true
@@ -120,7 +120,7 @@ function tidakSehat(number) {
         let mu = (number - 150) / (300 - 150)
         pm10['tidak sehat']['mu'] = mu
         pm10['tidak sehat']['isTrue'] = true
-    } else if(300 <= number && number <= 420){
+    } else if(300 <= number && number < 420){
         let mu = (420 - number) / (420 - 150)
         pm10['tidak sehat']['mu'] = mu
         pm10['tidak sehat']['isTrue'] = true
@@ -150,7 +150,7 @@ function berbahaya(number) {
 }
 
 function baikCo(number) {
-    if(5 <= number && number <= 10){
+    if(5 <= number && number < 10){
         let mu = (10 - number) / (10 - 5)
         co['baik']['mu'] = mu
         co['baik']['isTrue'] = true
@@ -216,7 +216,7 @@ function hitungIspu(a, rule){
     } else if (rule == "tidak sehat") {
         alpha = 100 + (a * 100)
     } else if (rule == "sangat tidak sehat") {
-        alpha = 100 + (a * 100)
+        alpha = 200 + (a * 100)
     } else if (rule == "berbahaya") {
         alpha = 300 + (a * 100)
     }
@@ -322,8 +322,8 @@ function recomendation(text) {
 }
 
 function manualDoStuff() {
-    let coVal = 11
-    let pm10Val = 47
+    let pm10Val = 420
+    let coVal = 34
     fuzzyfikasi(pm10Val, coVal)
     let zVal = inferensi(pm10, co)
     let defuzzyfikasis = defuzzyfikasi(zVal.alpha, zVal.y)
